@@ -1,29 +1,36 @@
-void setup()
-{
-	noLoop();
-}
-void draw()
-{
-	//your code here
-}
-void mousePressed()
-{
-	redraw();
-}
-class Die //models one single dice cube
-{
-	//variable declarations here
-	
-	Die(int x, int y) //constructor
-	{
-		//variable initializations here
-	}
-	void roll()
-	{
-		//your code here
-	}
-	void show()
-	{
-		//your code here
-	}
-}
+ Die a;
+     void setup()
+  {
+    a = new Die(0,0);
+    size(450,450);
+    noLoop();
+  }
+  void draw()
+  {
+    a.show();
+    a.roll();
+    System.out.println(a.num);
+  }
+  void mousePressed()
+  {
+      redraw();
+  }
+  class Die //models one single dice cube
+  {
+      int dX, dY, num;
+      
+      Die(int x, int y) //constructor
+      {
+        dX = x;
+        dY = y;
+      }
+      void roll()
+      {
+        num = (int)(Math.random()*6)+1;
+      }
+      void show()
+      {
+        fill(250,230,160);
+        rect(dX, dY, 30, 30);
+      }
+  }
