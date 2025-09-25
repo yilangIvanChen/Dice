@@ -1,36 +1,52 @@
- Die a;
-     void setup()
-  {
-    a = new Die(0,0);
-    size(450,450);
-    noLoop();
+die help;
+int sum = 0;
+void setup() {
+  background(150,230,255);
+  size(500, 480);
+  noLoop();
+}
+void draw() {
+  sum = 0;
+  background(90,160,240);
+  for (int y = 5; y < 405; y+=45) {
+    for (int x = 5; x< 510; x+=45) {
+      help = new die(x, y);
+      sum += help.roll();
+      help.show();
+    }
   }
-  void draw()
-  {
-    a.show();
-    a.roll();
-    System.out.println(a.num);
+  fill(0,0,0);
+  textSize(36);
+  text("Total: " + sum,0,450); //do the stupid thing and make the total represented by the stupid pictures
+}
+void mousePressed() {
+  redraw();
+}
+class die //models one single dice cube
+{
+  int dX, dY, num;
+
+  die(int x, int y) {
+    dX = x;
+    dY = y;
   }
-  void mousePressed()
-  {
-      redraw();
+  int roll() {
+    num = (int)(Math.random()*6)+1;
+    return num;
   }
-  class Die //models one single dice cube
-  {
-      int dX, dY, num;
-      
-      Die(int x, int y) //constructor
-      {
-        dX = x;
-        dY = y;
-      }
-      void roll()
-      {
-        num = (int)(Math.random()*6)+1;
-      }
-      void show()
-      {
-        fill(250,230,160);
-        rect(dX, dY, 30, 30);
-      }
+  void show() {
+    if (num == 1) //placeholder, replace with dumb pictures later
+      fill(255, 0, 0);
+    if (num == 2)
+      fill(0, 255, 0);
+    if (num == 3)
+      fill(0, 0, 255);
+    if (num == 4)
+      fill(255, 255, 0);
+    if (num == 5)
+      fill(255, 0, 255);
+    if (num == 6)
+      fill(0, 255, 255);
+    rect(dX, dY, 40, 40);
   }
+}
