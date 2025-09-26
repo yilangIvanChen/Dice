@@ -1,6 +1,14 @@
 die help;
+PImage one;
+PImage two;
+PImage three;
+PImage four;
+PImage five;
+PImage six;
+
 int sum = 0;
 void setup() {
+  one = loadImage("rollOne.png");
   background(150,230,255);
   size(500, 480);
   noLoop();
@@ -36,7 +44,7 @@ class die //models one single dice cube
   }
   void show() {
     if (num == 1) //placeholder, replace with dumb pictures later
-      fill(255, 0, 0);
+      image(one,dX,dY);
     if (num == 2)
       fill(0, 255, 0);
     if (num == 3)
