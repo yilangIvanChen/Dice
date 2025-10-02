@@ -36,25 +36,9 @@ void draw() {
   if (sum%100 == 67){
     image(no,350,530,width/9,height/9);
   }
-  else{
+  else
     textSize(24);
-   if (click>30)
-     text("don't you have something to do? \nyou should probably go do \nthat instead",350,550);
-   else if (click>=18)
-     text("or something like that",350,550);
-   else if (click>=16)
-     text("make it like my signature",350,550);
-   else if (click>=14)
-     text("maybe i should make this a \nrecurring feature",350,550);
-   else if (click>=12)
-     text("but it kinda gives this low effort \nassignment personality yk",350,550);
-   else if (click>=10)
-     text("don't really know why i added this",350,550);
-   else if (click>=7)
-     text("this text can change btw",350,550);
-   else
-     text("incoherency at its peak",350,550);
-  }
+    text("incoherency at its peak",350,550);
 }
 void mousePressed() {
   click++;
