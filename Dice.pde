@@ -36,9 +36,10 @@ void draw() {
   if (sum%100 == 67){
     image(no,350,530,width/9,height/9);
   }
-  else
+  else{
     textSize(24);
     text("incoherency at its peak",350,550);
+}
 }
 void mousePressed() {
   click++;
